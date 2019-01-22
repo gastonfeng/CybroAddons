@@ -20,12 +20,11 @@
 #    If not, see <https://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from odoo.osv import osv
-from odoo.tools.translate import _
 from odoo import fields, api
+from odoo.tools.translate import _
 
 
-class CarVehicle(osv.osv):
+class CarVehicle(models.Model):
     _name = 'car.car'
     _description = "Vechicles"
     _inherit = ['mail.thread']
