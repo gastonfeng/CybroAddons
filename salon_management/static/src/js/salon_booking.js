@@ -13,14 +13,14 @@ $(document).on('click',"#submit_button",function() {
    var service = $( "#service" ).val();
    var chair = $( "#chair" ).val();
    var list_service = [];
-   var number = service.length
+    var number = service.length;
    for (var i=0; i<(service.length); i++){
-    var k = {i : service[i]}
+       var k = {i: service[i]};
     list_service.push(k)
    }
-   var time_left_char = time.substring(0, 2)
-   var time_right_char = time.substring(3, 5)
-   var time_separator = time.substring(2,3)
+    var time_left_char = time.substring(0, 2);
+    var time_right_char = time.substring(3, 5);
+    var time_separator = time.substring(2, 3);
    if(date != ""){
        if (isNaN(time_left_char) || isNaN(time_right_char) || time_separator != ":"){
            if(time != ""){
@@ -28,12 +28,13 @@ $(document).on('click',"#submit_button",function() {
            }
        }
        else{
-           var time_left = parseInt(time_left_char)
-           var time_right = parseInt(time_right_char)
+           var time_left = parseInt(time_left_char);
+           var time_right = parseInt(time_right_char);
            if ((time_left < 24) && (time_right < 60) && (time_left >= 0) && (time_right >= 0)){
                 if (name != "" && phone != "" && email != "" && service != "" && chair != ""){
                    var booking_record = {'name': name, 'date': date, 'time': time, 'phone': phone,
-                    'email': email, service, 'list_service':list_service,'chair': chair,'number': number }
+                       'email': email, service, 'list_service': list_service, 'chair': chair, 'number': number
+                   };
                    $.ajax({
                     url: "/page/salon_details",
                     method: "POST",

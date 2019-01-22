@@ -24,7 +24,7 @@ odoo.define('bom_components_image.binary_image', function (require) {
                             model: options.model,
                             field: this.id,
                             id: options.id
-                        }
+                        };
                         if (this.resize) {
                             imageArgs.resize = this.resize;
                         }

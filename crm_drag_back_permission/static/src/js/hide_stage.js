@@ -9,7 +9,7 @@ render: function () {
         for (var key in this.widgets) {
 
             if (this.widgets[key]['title'] == 'Waiting for approval'){
-            var test = this.widgets[key].$el
+                var test = this.widgets[key].$el;
             test.css("display", "None");
             }
 

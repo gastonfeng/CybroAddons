@@ -86,7 +86,7 @@ var ProductCreationWidget = PosBaseWidget.extend({
                     self.pos.db.add_products([product]);
                     console.log(self)
                 });
-            console.log(product_vals)
+            console.log(product_vals);
             this.gui.close_popup();
             if( this.options.confirm ){
                 this.options.confirm.call(this,name);

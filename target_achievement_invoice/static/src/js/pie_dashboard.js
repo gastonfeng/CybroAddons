@@ -25,7 +25,7 @@ odoo.define('target_achievement_invoice.dashboard', function (require) {
                 // getting data to show
                 var uid = self.dataset.context.uid;
                 new Model('crm.team').call('find_target', ['', uid]).done(function (res_data) {
-                    console.log("res_data:  ", res_data)
+                    console.log("res_data:  ", res_data);
                     var dataset = res_data;
 
                     var pie=d3.layout.pie()
@@ -131,8 +131,8 @@ odoo.define('target_achievement_invoice.dashboard', function (require) {
                     $(html_string).prependTo(self.$el);
                 });
             });
-            return;
-    },
+
+        },
 });
 
 });

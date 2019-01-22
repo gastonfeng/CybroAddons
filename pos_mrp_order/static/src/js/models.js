@@ -14,11 +14,11 @@ for(var i=0; i<models.length; i++){
     }
 pos_screens.PaymentScreenWidget.include({
         validate_order: function(force_validation) {
-            var self = this
+            var self = this;
             this._super(force_validation);
             var order = self.pos.get_order();
             var order_line = order.orderlines.models;
-            var list_product = []
+            var list_product = [];
             var due   = order.get_due();
             if (due == 0)
             {

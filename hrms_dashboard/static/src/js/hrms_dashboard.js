@@ -68,7 +68,7 @@ var HrDashboard = Widget.extend(ControlPanelMixin, {
                 var day = new Date();
                 var next_day = new Date(day.setDate(day.getDate() + 7));
                 var next_week = next_day.toJSON().slice(0,10).replace(/-/g,'/');
-                var bday_date = bday_dt.toJSON().slice(0,10).replace(/-/g,'/');;
+                var bday_date = bday_dt.toJSON().slice(0, 10).replace(/-/g, '/');
                 if (bday_month == today_month  && bday_day >= today_day && next_week >= bday_date){
                     self.employee_birthday.push(res[i]);
                     var flag = 1;

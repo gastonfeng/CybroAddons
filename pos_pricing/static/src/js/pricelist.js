@@ -2,7 +2,7 @@ odoo.define("pos_pricing.pricelist", function (require) {
     "use strict";
     var core = require('web.core');
     var pos_model = require('point_of_sale.models');
-    var pos_chrome = require('point_of_sale.chrome')
+    var pos_chrome = require('point_of_sale.chrome');
     var models = pos_model.PosModel.prototype.models;
     var PosModelSuper = pos_model.PosModel;
     var OrderSuper = pos_model.Order;
@@ -52,7 +52,7 @@ odoo.define("pos_pricing.pricelist", function (require) {
     // PosModel is extended to store category, pricelists and pricelist items on startup
     pos_model.PosModel = pos_model.PosModel.extend({
         initialize: function(session, attributes) {
-            PosModelSuper.prototype.initialize.call(this, session, attributes)
+            PosModelSuper.prototype.initialize.call(this, session, attributes);
             this.pricelist_items = [''];
             this.pricelists = [];
             this.category = [];
@@ -259,7 +259,7 @@ odoo.define("pos_pricing.pricelist", function (require) {
                     order.apply_pricelist(client, pricelist_id);
                 }
                 else if (!client){
-                    $("#pos_pricelist").val('')
+                    $("#pos_pricelist").val('');
                     alert("Unable to set pricelist. Please check customer...!!")
                 }
             });

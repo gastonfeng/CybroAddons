@@ -49,7 +49,7 @@ var ProductZoomPopupWidget = PopupWidget.extend({
         options = options || {};
         var self = this;
         this._super(options);
-        this.image_url    = options.image_url
+        this.image_url = options.image_url;
         this.renderElement();
     }
 });

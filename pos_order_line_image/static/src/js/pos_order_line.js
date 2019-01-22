@@ -1,7 +1,7 @@
 odoo.define('pos_order_line_image.models', function (require) {
 "use strict";
 var screens = require('point_of_sale.screens');
-var OrderWidget = screens.OrderWidget
+    var OrderWidget = screens.OrderWidget;
 var core = require('web.core');
 var QWeb = core.qweb;
 

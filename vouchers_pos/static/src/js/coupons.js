@@ -299,7 +299,7 @@ odoo.define("vouchers_pos.coupons", function (require) {
     // PosModel is extended to store vouchers, & coupon details
     pos_model.PosModel = pos_model.PosModel.extend({
         initialize: function(session, attributes) {
-            PosModelSuper.prototype.initialize.call(this, session, attributes)
+            PosModelSuper.prototype.initialize.call(this, session, attributes);
             this.vouchers = [''];
             this.coupons = [];
             this.applied_coupon = [];
@@ -310,16 +310,16 @@ odoo.define("vouchers_pos.coupons", function (require) {
         initialize: function(attributes,options){
             this.coupon = false;
             this.coupon_status = [];
-            return OrderSuper.prototype.initialize.call(this, attributes,options);;
+            return OrderSuper.prototype.initialize.call(this, attributes, options);
         },
         set_coupon_value: function (coupon) {
             this.coupon_status = coupon;
-            return;
+
         },
         coupon_applied: function () {
             this.coupon = true;
             this.export_as_JSON();
-            return;
+
         },
         check_voucher_validy: function () {
             var self = this;

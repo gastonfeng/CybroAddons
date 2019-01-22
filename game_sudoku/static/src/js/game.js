@@ -34,7 +34,7 @@ var MyGame = Widget.extend({
                     return;
                 }
                 self.employee = res[0];
-                self.user = self.session.uid
+                self.user = self.session.uid;
                 self.$el.html(QWeb.render("EntertainmentGamesMainMenu", {widget: self}));
             });
 

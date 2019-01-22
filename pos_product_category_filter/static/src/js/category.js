@@ -24,7 +24,7 @@ odoo.define('pos_product_category_filter.pos_product_category_filter', function 
                 }
                 self.db.add_categories(categories);
             },
-    }
+    };
 
     for(var i=0; i< models.PosModel.prototype.models.length; i++){
         var model = models.PosModel.prototype.models[i];
@@ -88,7 +88,7 @@ odoo.define('pos_product_category_filter.pos_product_category_filter', function 
                 }else{
                     if(products[i].pos_categ_ancestors){
                         for(var j = 0, jlen = products[i].pos_categ_ancestors.length; j < jlen; j++){
-                            var temp_categ = this.get_category_by_id(products[i].pos_categ_ancestors[j])
+                            var temp_categ = this.get_category_by_id(products[i].pos_categ_ancestors[j]);
                             if(temp_categ != 0 && temp_categ.available == true){
                                 products[i].available = true;
                             }
@@ -162,10 +162,10 @@ odoo.define('pos_product_category_filter.pos_product_category_filter', function 
                     if(this.subcategories[i].available == true){
                         list_container.appendChild(this.render_category(this.subcategories[i],withpics));
                     }else{
-                        var ancestor_ids = db.get_category_ancestors_ids(this.subcategories[i].id)
+                        var ancestor_ids = db.get_category_ancestors_ids(this.subcategories[i].id);
                         for(var j = 0, jlen = ancestor_ids.length; j < jlen; j++){
                             if(ancestor_ids[j] != 0){
-                                var ancestor = db.get_category_by_id(ancestor_ids[j])
+                                var ancestor = db.get_category_by_id(ancestor_ids[j]);
                                 if(ancestor.available == true){
                                     list_container.appendChild(this.render_category(this.subcategories[i],withpics));
                                 }

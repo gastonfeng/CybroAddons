@@ -273,7 +273,7 @@ var ReturnOrdersWidget = pos_screens.ScreenWidget.extend({
                 }
             }
             $('span.searchbox').css('display', 'none');
-            $('.button.return').css('display', 'block')
+            $('.button.return').css('display', 'block');
             self.pos_reference = order_new.pos_reference;
             if (order_new.return_ref){
                   self.gui.show_popup('error',_t('This is a returned order'));
@@ -362,14 +362,14 @@ var OrderReturnWidget = PosBaseWidget.extend({
     var order_new = null;
     $("#table-body").empty();
     var lines = [];
-    this.pos_reference = options.ref
+        this.pos_reference = options.ref;
     new Model('pos.order').call('get_lines',[options.ref]).then(function(result){
             lines = result[0];
             this.client = result[1];
             for(var j=0;j < lines.length; j++){
                 var product_line = lines[j];
                 var rows = "";
-                var id = product_line.product_id
+                var id = product_line.product_id;
                 var price_unit = product_line.price_unit;
                 var name =product_line.product;
                 var qty = product_line.qty;
@@ -406,11 +406,11 @@ var OrderReturnWidget = PosBaseWidget.extend({
      click_confirm: function(){
         var self = this;
 	    var myTable = document.getElementById('list').tBodies[0];
-        var count  = 0
-        var c = 1
+         var count = 0;
+         var c = 1;
         for (var r=0, n = myTable.rows.length; r < n; r++) {
-            var row = myTable.rows[r]
-            var return_qty = document.getElementById("text"+c).value
+            var row = myTable.rows[r];
+            var return_qty = document.getElementById("text" + c).value;
             if (row.cells[3].innerHTML < return_qty){
                 count +=1
             }
@@ -420,11 +420,11 @@ var OrderReturnWidget = PosBaseWidget.extend({
              alert('Please check the Returned Quantity,it is higher than purchased')
         }
         else{
-            var c = 1
+            var c = 1;
             // OrderSuper.prototype.set_client.call(this, this.client);
             for (var r=0, n = myTable.rows.length; r < n; r++) {
-                row = myTable.rows[r]
-                var return_qty = document.getElementById("text"+c).value
+                row = myTable.rows[r];
+                var return_qty = document.getElementById("text" + c).value;
                 var product   = this.pos.db.get_product_by_id(row.cells[0].innerHTML);
                 if (!product) {
                     return;
@@ -489,7 +489,7 @@ models.Order = models.Order.extend({
         if(options.extras !== undefined){
             for (var prop in options.extras) {
                 if (prop ==='pos_ref'){
-                    this.return_ref = options.extras['pos_ref']
+                    this.return_ref = options.extras['pos_ref'];
                     this.trigger('change',this);
                     var self = this;
                     var curr_client = order.get_client();

@@ -21,7 +21,7 @@ var MultiUomWidget = PosBaseWidget.extend({
     },
     /*function returns all the uom s in the specified category*/
     get_units_by_category: function(uom_list, categ_id){
-        var uom_by_categ = []
+        var uom_by_categ = [];
         for (var uom in uom_list){
             if(uom_list[uom].category_id[0] == categ_id[0]){
                 uom_by_categ.push(uom_list[uom]);
@@ -97,7 +97,7 @@ var MultiUomWidget = PosBaseWidget.extend({
         var latest_price = this.get_latest_price(selected_uom, orderline.product);
         order.get_selected_orderline().set_unit_price(latest_price);
         this.gui.close_popup();
-        return;
+
 
     },
     click_cancel: function(){

@@ -1,6 +1,6 @@
 var maxAttempts=100;
 var globb;
-var check = 0
+var check = 0;
 var selected_cell_id;
 var current_cell = null;
 var sudokuboard = new Array(9);
@@ -609,19 +609,19 @@ var Sudoku = Widget.extend({
             }
             if (key == ' ')
             {
-                console.log("sudokuboard[rr][cc]", board[rr][cc])
+                console.log("sudokuboard[rr][cc]", board[rr][cc]);
                 if(!(board[rr][cc]))
                 {
-                    console.log("space space", globb, selected_cell_id)
+                    console.log("space space", globb, selected_cell_id);
                     $(selected_cell_id).text("");
                     sudokuboard[rr][cc]=0;
-                    console.log("sudokuboard[rr][cc]", sudokuboard[rr][cc])
+                    console.log("sudokuboard[rr][cc]", sudokuboard[rr][cc]);
                     if ($(selected_cell_id).hasClass("selected")){
-                        console.log("class selected")
+                        console.log("class selected");
                         $(selected_cell_id).addClass('tofill').removeClass('selected');
                     }
                     if ($(selected_cell_id).hasClass("filled")){
-                        console.log("class filled")
+                        console.log("class filled");
                         $(selected_cell_id).addClass('tofill').removeClass('filled');
                     }
                 }
@@ -637,7 +637,7 @@ var Sudoku = Widget.extend({
                      $(selected_cell_id).addClass('filled').removeClass('selected');
                     if(globb.isfull(rr, cc))
                     {
-                        globb.show_wow()
+                        globb.show_wow();
                         setTimeout(function() {
                             globb.check();
                         }, 10000);
@@ -662,7 +662,7 @@ selectCell: function(cell, cell_id)
         {
             for (var cols=0; cols <= 8; cols++)
             {
-                var cells=document.getElementById('cell_' + rows + '_' + cols)
+                var cells = document.getElementById('cell_' + rows + '_' + cols);
                 if (cells.className == 'selected')
                 {
                     var v= sudokuboard[rows][cols];
@@ -725,8 +725,8 @@ selectCell: function(cell, cell_id)
             {
                 var cell = document.getElementById('cell_' + row + '_' + col);
                 var self = this;
-                var cell_id = "#cell_" + row + "_" + col
-                var cell_idd = "cell_" + row + "_" + col
+                var cell_id = "#cell_" + row + "_" + col;
+                var cell_idd = "cell_" + row + "_" + col;
                 if (!parseInt(cell.innerHTML))
                 {
                     cell.className='tofill';
@@ -778,7 +778,7 @@ selectCell: function(cell, cell_id)
             }
             else
             {
-                continue;
+
             }
         }
         return 0;
@@ -787,7 +787,7 @@ selectCell: function(cell, cell_id)
     rand: function()
     {
         var r1=Math.floor(Math.random() * 10);
-        r1=(r1+r1+1)%9
+        r1 = (r1 + r1 + 1) % 9;
             return r1;
     },
 
@@ -797,8 +797,8 @@ selectCell: function(cell, cell_id)
         {
             for (var col=0; col <= 8; col++)
             {
-                var cell=document.getElementById('cell_' + row + '_' + col)
-                var cell_id = '#cell_' + row + '_' + col
+                var cell = document.getElementById('cell_' + row + '_' + col);
+                var cell_id = '#cell_' + row + '_' + col;
                 var v= sudokuboard[row][col];
                 if (v==0){
                      $("#cell_"+row+"_"+col).text("");
@@ -806,7 +806,7 @@ selectCell: function(cell, cell_id)
                 }
                 else{
                     $("#cell_"+row+"_"+col).text(v);
-                    console.log("receckkkkk",sudokuboard[row][col] )
+                    console.log("receckkkkk", sudokuboard[row][col]);
                     if (sudokuboard[row][col] == board[row][col])
                     {
                         cell.className = 'notfill';
@@ -876,9 +876,9 @@ selectCell: function(cell, cell_id)
             for (var col=0; col <= 8; col++)
             {
                 sudokuboard[row][col]=board[row][col];
-                var cell=document.getElementById('cell_' + row + '_' + col)
-                var cell_id = '#cell_' + row + '_' + col
-                var cell_idd = 'cell_' + row + '_' + col
+                var cell = document.getElementById('cell_' + row + '_' + col);
+                var cell_id = '#cell_' + row + '_' + col;
+                var cell_idd = 'cell_' + row + '_' + col;
                 var v= board[row][col];
                 if (v==0)
                      $("#cell_"+row+"_"+col).text("");
@@ -933,14 +933,14 @@ selectCell: function(cell, cell_id)
 		   			for(var col=0;col<9;col++)
 		   			{
 		   				thisRow=Puzzle[row];
-		   				thisCol=new Array();
+                        thisCol = [];
 		   				for(var row1=0;row1<9;row1++)
 		   				{
 		   					thisCol.push(Puzzle[row1][col]);
 		   				}
 		   				var subRow=parseInt(row/3);
 		   				var subCol=parseInt(col/3);
-		   				var subMat=new Array();
+                        var subMat = [];
 		   				for(var subR=0;subR<3;subR++)
 		   				{
 		   					for(var subC=0;subC<3;subC++)
@@ -990,7 +990,7 @@ start: function () {
                     return;
                 }
                 self.employee = res[0];
-                self.user = self.session.uid
+                self.user = self.session.uid;
                 self.$el.html(QWeb.render("EntertainmentGamesSudoku", {widget: self}));
             });
 

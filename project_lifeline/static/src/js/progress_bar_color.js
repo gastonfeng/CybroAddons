@@ -4,7 +4,7 @@ odoo.define('progress_bar_color.ProgressBar', function (require) {
 var core = require('web.core');
 var utils = require('web.utils');
 var Widget = require('web.Widget');
-var ProgressBar = require('web.ProgressBar')
+    var ProgressBar = require('web.ProgressBar');
 var Model = require('web.DataModel');
 
 var QWeb = core.qweb;
@@ -14,7 +14,7 @@ var _t = core._t;
 ProgressBar.include({
 
     _render_value: function(v) {
-        var self = this
+        var self = this;
         var value = this.value;
         var max_value = this.max_value;
         if(!isNaN(v)) {
@@ -39,7 +39,7 @@ ProgressBar.include({
                 for (var ranges = 0; ranges < result.length; ranges++){
                     self.$('.o_progress').toggleClass('o_progress_overflow', value > max_value);
                     if (widthComplete >= result[ranges][0] && widthComplete <= result[ranges][1]){
-                        console.log(widthComplete)
+                        console.log(widthComplete);
                         self.$('.o_progressbar_complete').toggleClass('o_progress_red', result[ranges][2] == 'red').css('width', widthComplete + '%');
                         self.$('.o_progressbar_complete').toggleClass('o_progress_pink', result[ranges][2] == 'pink').css('width', widthComplete + '%');
                         self.$('.o_progressbar_complete').toggleClass('o_progress_orange', result[ranges][2] == 'orange').css('width', widthComplete + '%');
