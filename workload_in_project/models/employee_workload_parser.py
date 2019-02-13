@@ -29,8 +29,8 @@ from odoo.http import request
 
 class EmployeeWorkloadReportCommon(report_sxw.rml_parse):
 
-    def __init__(self, cr, uid, name, context=None):
-        super(EmployeeWorkloadReportCommon, self).__init__(cr, uid, name, context=context)
+    def __init__(self,  name, context=None):
+        super(EmployeeWorkloadReportCommon, self).__init__( name, context=context)
         self.localcontext.update({
             'get_mxm_workload': self.get_mxm_workload,
             'get_line': self.get_lines,

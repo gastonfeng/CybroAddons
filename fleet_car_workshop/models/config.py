@@ -34,11 +34,11 @@ class WorkshopSetting(models.Model):
         return self.env['ir.values'].sudo().set_default(
             'workshop.config.setting', 'invoice_journal_type', self.invoice_journal_type.id)
 
-    def cancel(self, cr, uid, ids, context=None):
+    def cancel(self,  ids, context=None):
         act_window = self.pool['ir.actions.act_window']
-        action_ids = act_window.search(cr, uid, [('res_model', '=', self._name)])
+        action_ids = act_window.search( [('res_model', '=', self._name)])
         if action_ids:
-            return act_window.read(cr, uid, action_ids[0], [], context=context)
+            return act_window.read( action_ids[0], [], context=context)
         return {}
 
 
@@ -67,7 +67,7 @@ class WorksheetStages(models.Model):
                           help='This stage is folded in the kanban view when '
                                'there are no records in that stage to display.')
 
-    def _get_default_vehicle_ids(self, cr, uid, ctx=None):
+    def _get_default_vehicle_ids(self,  ctx=None):
         if ctx is None:
             ctx = {}
         default_vehicle_id = ctx.get('default_vehicle_id')

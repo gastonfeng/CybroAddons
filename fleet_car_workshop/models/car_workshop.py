@@ -83,14 +83,14 @@ class CarWorkshop(models.Model):
     effective_hour = fields.Float(string='Hours Spent', readonly=True, compute="hours_spent")
     amount_total = fields.Float(string='Total Amount', readonly=True, compute="amount_total1")
 
-    def _get_default_stages(self, cr, uid, context=None):
+    def _get_default_stages(self,  context=None):
         """ Gives default stage_id """
         if context is None:
             context = {}
         default_vehicle_id = context.get('default_vehicle_id')
         if not default_vehicle_id:
             return False
-        return self.find_stage(cr, uid, [], default_vehicle_id, [('fold', '=', False)], context=context)
+        return self.find_stage( [], default_vehicle_id, [('fold', '=', False)], context=context)
 
     _defaults = {
         'stage_id': _get_default_stages,
@@ -301,7 +301,7 @@ class CarWorkshop(models.Model):
 
         return result
 
-    def _read_group_stages(self, cr, uid, ids, domain, read_group_order=None, access_rights_uid=None, context=None):
+    def _read_group_stages(self,  ids, domain, read_group_order=None, access_rights_uid=None, context=None):
         if context is None:
             context = {}
         stage_obj = self.pool.get('worksheet.stages')
@@ -313,7 +313,7 @@ class CarWorkshop(models.Model):
             search_domain = ['|', ('vehicle_ids', '=', context['default_vehicle_id']), ('id', 'in', ids)]
         else:
             search_domain = [('id', 'in', ids)]
-        stage_ids = stage_obj._search(cr, uid, search_domain, order=order, access_rights_uid=access_rights_uid, context=context)
+        stage_ids = stage_obj._search( search_domain, order=order, access_rights_uid=access_rights_uid, context=context)
         result = stage_obj.name_get(cr, access_rights_uid, stage_ids, context=context)
         result.sort(lambda x, y: cmp(stage_ids.index(x[0]), stage_ids.index(y[0])))
 
@@ -327,27 +327,27 @@ class CarWorkshop(models.Model):
     }
 
     @api.cr_uid_ids_context
-    def onchange_vehicle(self, cr, uid, id, vehicle_id, context=None):
+    def onchange_vehicle(self,  id, vehicle_id, context=None):
         values = {}
         if vehicle_id:
-            vehicle = self.pool.get('fleet.vehicle').browse(cr, uid, vehicle_id, context=context)
+            vehicle = self.pool.get('fleet.vehicle').browse( vehicle_id, context=context)
             if vehicle.exists():
                 values['partner_id'] = vehicle.partner_id.id
-                values['stage_id'] = self.find_stage(cr, uid, [], vehicle_id, [('fold', '=', False)], context=context)
+                values['stage_id'] = self.find_stage( [], vehicle_id, [('fold', '=', False)], context=context)
         else:
             values['stage_id'] = False
         return {'value': values}
 
-    def _get_default_vehicle(self, cr, uid, context=None):
+    def _get_default_vehicle(self,  context=None):
         if context is None:
             context = {}
         if 'default_vehicle_id' in context:
-            vehicle = self.pool.get('car.car').browse(cr, uid, context['default_vehicle_id'], context=context)
+            vehicle = self.pool.get('car.car').browse( context['default_vehicle_id'], context=context)
             if vehicle and vehicle.partner_id:
                 return vehicle.partner_id.id
         return False
 
-    def find_stage(self, cr, uid, cases, section_id, domain=[], order='sequence', context=None):
+    def find_stage(self,  cases, section_id, domain=[], order='sequence', context=None):
         """ Override of the base.stage method
             Parameter of the stage search taken from the lead:
             - section_id: if set, stages must belong to this section or
@@ -355,7 +355,7 @@ class CarWorkshop(models.Model):
               stages
         """
         if isinstance(cases, (int, long)):
-            cases = self.browse(cr, uid, cases, context=context)
+            cases = self.browse( cases, context=context)
         section_ids = []
         if section_id:
             section_ids.append(section_id)
@@ -368,7 +368,7 @@ class CarWorkshop(models.Model):
             for section_id in section_ids:
                 search_domain.append(('vehicle_ids', '=', section_id))
         search_domain += list(domain)
-        stage_ids = self.pool.get('worksheet.stages').search(cr, uid, search_domain, order=order, context=context)
+        stage_ids = self.pool.get('worksheet.stages').search( search_domain, order=order, context=context)
         if stage_ids:
             return stage_ids[0]
         return False

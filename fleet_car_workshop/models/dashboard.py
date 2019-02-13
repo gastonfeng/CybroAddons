@@ -29,7 +29,7 @@ class CarVehicle(models.Model):
     _description = "Vechicles"
     _inherit = ['mail.thread']
 
-    def _get_visibility_selection_id(self, cr, uid, context=None):
+    def _get_visibility_selection_id(self,  context=None):
         return [('portal', _('Customer Works: visible in portal if the customer is a follower')),
                 ('employees', _('All Employees Work: all employees can access')),
                 ('followers', _('Private Work: followers only'))]

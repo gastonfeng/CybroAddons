@@ -105,10 +105,10 @@ class SalonChair(models.Model):
                 cr['date'] = cr['user_line'][len((cr['user_line']))-1][2]['start_date']
         return super(SalonChair, self).write(cr)
 
-    def collection_today_updater(self, cr, uid, context=None):
+    def collection_today_updater(self,  context=None):
         salon_chair = self.pool.get('salon.chair')
-        for values in self.search(cr, uid, []):
-            chair_obj = salon_chair.browse(cr, uid, values, context=context)
+        for values in self.search( []):
+            chair_obj = salon_chair.browse( values, context=context)
             invoiced_records = chair_obj.env['salon.order'].search([('stage_id', 'in', [3, 4]),
                                                                     ('chair_id', '=', chair_obj.id)])
             total = 0

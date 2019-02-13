@@ -225,7 +225,7 @@ class ProjectSubTaskType(models.Model):
                 if each.id != self.id:
                     each.write({'cancel_state': False})
 
-    def _get_default_task_ids(self, cr, uid, ctx=None):
+    def _get_default_task_ids(self,  ctx=None):
         if ctx is None:
             ctx = {}
         default_task_ids = ctx.get('default_task_ids')

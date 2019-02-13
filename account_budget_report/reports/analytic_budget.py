@@ -27,8 +27,8 @@ from odoo.http import request
 
 
 class AnalyticAccountBudgetReport(report_sxw.rml_parse):
-    def __init__(self, cr, uid, name, context):
-        super(AnalyticAccountBudgetReport, self).__init__(cr, uid, name, context=context)
+    def __init__(self,  name, context):
+        super(AnalyticAccountBudgetReport, self).__init__( name, context=context)
         self.localcontext.update({
             'funct': self.funct,
             'funct_total': self.funct_total,
