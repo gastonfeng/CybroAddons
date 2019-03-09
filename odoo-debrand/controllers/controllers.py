@@ -1,15 +1,20 @@
 # -*- coding: utf-8 -*-
+import functools
 import imghdr
 import json
-import functools
-from odoo import http, tools
-import odoo, os, sys, jinja2
-from odoo.addons.web.controllers.main import Database
+from io import StringIO
+
 from odoo.addons.web.controllers import main
 from odoo.addons.web.controllers.main import Binary
-from odoo.modules import get_resource_path
-from io import StringIO
+from odoo.addons.web.controllers.main import Database
+
+import jinja2
+import odoo
+import os
+import sys
+from odoo import http, tools
 from odoo.http import request
+from odoo.modules import get_resource_path
 
 if hasattr(sys, 'frozen'):
     # When running on compiled windows binary, we don't have access to package loader.

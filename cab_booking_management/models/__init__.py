@@ -20,12 +20,10 @@
 #
 ##############################################################################
 
-from . import cab_creation
-from . import cab_log
-from . import cab_conf
 from . import cab_booking
+from . import cab_conf
+from . import cab_creation
 from . import cab_location
-from . import cab_timing
+from . import cab_log
 from . import cab_maintanence
-
-
+from . import cab_timing

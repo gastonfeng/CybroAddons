@@ -21,7 +21,7 @@
 #
 ##############################################################################
 
-from odoo import models, api, _
+from odoo import models, api
 
 
 class AccountJournal(models.Model):

@@ -20,8 +20,9 @@
 #
 ###################################################################################
 
-from odoo import models, api
 from datetime import datetime
+
+from odoo import models, api
 
 
 class ReportAvgPrices(models.AbstractModel):

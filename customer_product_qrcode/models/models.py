@@ -10,8 +10,7 @@ except ImportError:
     base64 = None
 from io import BytesIO
 
-
-from odoo import models, fields, api, _, SUPERUSER_ID
+from odoo import models, fields, api, _
 from odoo.exceptions import UserError
 
 

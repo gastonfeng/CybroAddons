@@ -2,13 +2,14 @@
 import base64
 import logging
 import os
-from PIL import Image
 import tempfile
+
+from PIL import Image
 from resizeimage import resizeimage
-from . import google_images_download
+
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError, Warning
-
+from . import google_images_download
 
 _logger = logging.getLogger(__name__)
 

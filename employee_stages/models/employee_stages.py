@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from datetime import date
+
 from odoo import models, fields, api
 
 emp_stages = [('joined', 'Slap On'),

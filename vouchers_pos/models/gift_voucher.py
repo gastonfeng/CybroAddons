@@ -5,6 +5,7 @@
 #    Copyright (C) 2017-TODAY Cybrosys Technologies(<https://www.cybrosys.com>).
 #    Author:LINTO CT(<https://www.cybrosys.com>)
 
+import random
 #    This program is free software: you can modify
 #    it under the terms of the GNU Affero General Public License (AGPL) as
 #    published by the Free Software Foundation, either version 3 of the
@@ -20,7 +21,7 @@
 #
 ###################################################################################
 import string
-import random
+
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError
 

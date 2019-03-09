@@ -2,8 +2,9 @@
 
 import datetime
 from datetime import datetime
+
 from odoo import SUPERUSER_ID
-from odoo import api, fields, models, _
+from odoo import api, fields, models
 
 
 class DeadLineReminder(models.Model):

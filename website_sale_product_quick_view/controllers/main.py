@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from odoo import http
 from odoo.addons.website_sale.controllers import main
+
+from odoo import http
 
 
 class WebsiteSaleExtend(main.WebsiteSale):

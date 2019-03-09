@@ -20,8 +20,9 @@
 #    If not, see <https://www.gnu.org/licenses/>.
 #
 ##############################################################################
-import string
 import random
+import string
+
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError
 

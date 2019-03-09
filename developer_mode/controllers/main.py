@@ -20,10 +20,11 @@
 #
 ###################################################################################
 
+from odoo.addons.web.controllers.main import Home, ensure_db
+
 import odoo
 from odoo import http, _
 from odoo.http import request
-from odoo.addons.web.controllers.main import Home, ensure_db
 
 
 class AutoDeveloperMode(Home):

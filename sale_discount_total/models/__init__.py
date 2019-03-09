@@ -19,7 +19,6 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 ###################################################################################
-from . import sale
 from . import account_invoice
 from . import discount_approval
-
+from . import sale

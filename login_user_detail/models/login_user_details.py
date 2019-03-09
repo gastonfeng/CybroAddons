@@ -22,8 +22,9 @@
 ##############################################################################
 import logging
 from itertools import chain
-from odoo.http import request
+
 from odoo import models, fields, api
+from odoo.http import request
 
 _logger = logging.getLogger(__name__)
 USER_PRIVATE_FIELDS = ['password']
