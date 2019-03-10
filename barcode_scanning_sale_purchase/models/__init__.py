@@ -19,5 +19,5 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 ###################################################################################
-from . import purchase_order
 from . import sale_order
+from . import purchase_order

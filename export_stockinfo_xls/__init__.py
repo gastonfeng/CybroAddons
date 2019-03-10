@@ -5,7 +5,6 @@
 #    Copyright (C) 2018-TODAY Cybrosys Technologies(<http://www.cybrosys.com>).
 #    Author: Cybrosys(<https://www.cybrosys.com>)
 
-from . import models
 #    This program is free software: you can modify
 #    it under the terms of the GNU Affero General Public License (AGPL) as
 #    published by the Free Software Foundation, either version 3 of the
@@ -21,3 +20,4 @@ from . import models
 #
 ###################################################################################
 from . import report
+from . import models
