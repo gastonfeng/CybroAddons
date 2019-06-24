@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-import time
 import logging
+import time
+
 from odoo import api, models, _
 from odoo.exceptions import UserError
-
 
 _logger = logging.getLogger(__name__)
 

@@ -21,11 +21,11 @@
 #
 ##############################################################################
 
-from odoo import api, models, fields, _
-from odoo.exceptions import UserError, ValidationError
+from odoo.addons.mrp.models.mrp_production import MrpProduction as mp
 from psycopg2 import IntegrityError
 
-from odoo.addons.mrp.models.mrp_production import MrpProduction as mp
+from odoo import api, models, fields, _
+from odoo.exceptions import UserError, ValidationError
 
 
 class MrpProduction(models.Model):

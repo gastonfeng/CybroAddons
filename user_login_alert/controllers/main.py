@@ -25,13 +25,15 @@ try:
 except ImportError:
     pass
 from time import gmtime, strftime
+
 from odoo.addons.web.controllers import main
-from odoo.http import request
-from odoo.exceptions import Warning
+
 import odoo
 import odoo.modules.registry
-from odoo.tools.translate import _
 from odoo import http
+from odoo.exceptions import Warning
+from odoo.http import request
+from odoo.tools.translate import _
 
 
 class Home(main.Home):

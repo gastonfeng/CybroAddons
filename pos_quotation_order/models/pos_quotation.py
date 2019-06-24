@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 
 import logging
-import psycopg2
 from functools import partial
+
+import psycopg2
+
 from odoo import models, fields, api, tools, _
 from odoo.exceptions import UserError
 

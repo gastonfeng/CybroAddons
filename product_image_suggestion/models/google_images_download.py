@@ -4,9 +4,10 @@
 
 ###### Searching and Downloading Google Images to the local disk ######
 
+import logging
 # Import Libraries
 import sys
-import logging
+
 _logger = logging.getLogger(__name__)
 
 version = (3, 0)
@@ -31,11 +32,9 @@ import time  # Importing the time library to check the time of code execution
 import os
 import argparse
 import ssl
-import datetime
 import json
 import re
 import codecs
-import socket
 
 args_list = ["keywords", "keywords_from_file", "prefix_keywords", "suffix_keywords",
              "limit", "format", "color", "color_type", "usage_rights", "size",

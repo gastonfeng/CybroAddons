@@ -22,6 +22,7 @@
 ###################################################################################
 
 from datetime import date
+
 from odoo import models, fields, api
 
 

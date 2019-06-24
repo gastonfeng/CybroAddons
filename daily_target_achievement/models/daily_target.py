@@ -3,11 +3,12 @@
 
 import time
 from datetime import datetime
+
 import babel
 
-from odoo import fields, models, api, _, tools
 from odoo import exceptions
-from odoo.exceptions import Warning, UserError
+from odoo import fields, models, api, _, tools
+from odoo.exceptions import UserError
 
 
 class DailyTarget(models.Model):

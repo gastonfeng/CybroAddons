@@ -24,4 +24,3 @@
 from . import salon_management
 from . import salon_booking
 from . import salon_config
-

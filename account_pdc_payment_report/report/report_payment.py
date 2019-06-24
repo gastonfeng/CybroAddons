@@ -20,7 +20,6 @@
 #    If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-import time
 import logging
 
 from odoo import api, models, _

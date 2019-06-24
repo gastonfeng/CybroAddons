@@ -21,8 +21,8 @@
 #
 #############################################################################
 
-from odoo.exceptions import UserError
 from odoo import models, fields, _, api
+from odoo.exceptions import UserError
 
 
 class SalePromotion(models.Model):

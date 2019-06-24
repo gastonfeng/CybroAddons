@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 
 from datetime import datetime
+
 from dateutil import parser
 
-from odoo import http, tools, _
+from odoo import http
 from odoo.http import request
 
 

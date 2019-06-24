@@ -27,5 +27,3 @@ from . import cab_booking
 from . import cab_location
 from . import cab_timing
 from . import cab_maintanence
-
-

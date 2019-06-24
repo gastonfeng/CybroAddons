@@ -20,8 +20,8 @@
 #    If not, see <https://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from odoo.exceptions import UserError
 from odoo import models, fields, api, _
+from odoo.exceptions import UserError
 
 
 class InvoiceStockMove(models.Model):

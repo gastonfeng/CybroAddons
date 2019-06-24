@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api
 from datetime import date
+
+from odoo import models, fields, api
 
 
 class CabBooking(models.Model):

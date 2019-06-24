@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from ast import literal_eval
-
 from odoo import api, fields, models
 from odoo.exceptions import AccessDenied
 

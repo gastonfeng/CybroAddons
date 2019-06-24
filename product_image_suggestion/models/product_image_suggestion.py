@@ -3,20 +3,15 @@ import base64
 import logging
 import os
 import tempfile
-from . import google_images_download
+
+from PIL import Image
+from resizeimage import resizeimage
+
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError, Warning
+from . import google_images_download
 
 _logger = logging.getLogger(__name__)
-
-try:
-	from PIL import Image
-except ImportError:
-    _logger.debug('Cannot `import Image`.')
-try:
-	from resizeimage import resizeimage
-except ImportError:
-    _logger.debug('Cannot `import resizeimage`.')
 
 
 class ProductImageSelection(models.TransientModel):
