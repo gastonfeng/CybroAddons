@@ -97,7 +97,7 @@
         </xpath>
     </template>
     <template id="products_item_extended" inherit_id="website_sale.products_item">
-        <xpath expr="//div[@class='product_price']" position="inside">
+        <xpath expr="//div[hasclass('product_price')]" position="inside">
             <button type="button" class="btn btn-xs"
                     data-toggle="modal"
                     style="background: transparent;"
